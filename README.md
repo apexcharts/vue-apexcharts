@@ -64,7 +64,7 @@ This will render the following chart
 
 ### How do I update the chart?
 Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a loot at the below example
-<p align="center"><a href="#"><img src="https://apexcharts.com/media/chart-updation-vue.gif"></a></p>
+<p align="center"><a href="#"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
 
 ```html
 <template>
