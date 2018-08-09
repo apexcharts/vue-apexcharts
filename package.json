@@ -1,0 +1,42 @@
+{
+  "name": "vue-apexcharts",
+  "version": "1.0.2",
+  "description": "Vue.js wrapper for ApexCharts",
+  "main": "dist/vue-apexcharts.js",
+  "scripts": {
+    "unit": "karma start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "rollup src/index.js -f umd -n VueApexCharts -g apexcharts:ApexCharts -o dist/vue-apexcharts.js",
+    "build": "npm run bundle",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && npm publish"
+  },
+  "keywords": [
+    "Vue.js",
+    "apexcharts",
+    "vue",
+    "charts",
+    "visualizations"
+  ],
+  "author": {
+    "name": "Juned Chhipa",
+    "email": "juned.chhipa@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/apexcharts/vue-apexcharts/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apexcharts": "^1.2.0"
+  },
+  "peerDependencies": {
+    "vue": ">=1.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^0.64.1",
+    "rollup-plugin-istanbul": "^2.0.1",
+    "uglify-js": "^3.4.6",
+    "vue": "^2.5.17"
+  }
+}
