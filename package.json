@@ -1,6 +1,6 @@
 {
   "name": "vue-apexcharts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue.js wrapper for ApexCharts",
   "main": "dist/vue-apexcharts.js",
   "scripts": {

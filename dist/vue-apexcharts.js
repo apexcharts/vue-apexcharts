@@ -119,6 +119,9 @@
       }
       this.destroy();
     },
+    render(createElement) {
+  		return createElement('div');		
+  	},
     methods: {
       init() {
         const newOptions = {
