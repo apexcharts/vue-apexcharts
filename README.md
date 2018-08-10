@@ -35,11 +35,11 @@ To create a basic bar chart with minimal configuration, write as follows:
 ```
 
 ```js
-import VueApexcharts from 'vue-apexcharts'
+import VueApexCharts from 'vue-apexcharts'
 
 export default {
     components: {
-      apexcharts: VueApexcharts,
+      apexcharts: VueApexCharts,
     },
     data: function() {
       return {
