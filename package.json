@@ -7,10 +7,7 @@
     "unit": "karma start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "rollup src/index.js -f umd -n VueApexCharts -g apexcharts:ApexCharts -o dist/vue-apexcharts.js",
-    "build": "npm run bundle",
-    "preversion": "npm test",
-    "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags && npm publish"
+    "build": "npm run bundle"
   },
   "keywords": [
     "Vue.js",
