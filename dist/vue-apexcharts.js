@@ -6,59 +6,6 @@
 
   ApexCharts = ApexCharts && ApexCharts.hasOwnProperty('default') ? ApexCharts['default'] : ApexCharts;
 
-  class Utils {
-
-    static isObject(item) {
-      return (item && typeof item === 'object' && !Array.isArray(item) && item !== null)
-    }
-
-    static extend(target, source) {
-      if (typeof Object.assign !== 'function') {
-        (function() {
-          Object.assign = function(target) {
-            // We must check against these specific cases.
-            if (target === undefined || target === null) {
-              throw new TypeError('Cannot convert undefined or null to object')
-            }
-    
-            let output = Object(target);
-            for (let index = 1; index < arguments.length; index++) {
-              let source = arguments[index];
-              if (source !== undefined && source !== null) {
-                for (let nextKey in source) {
-                  if (source.hasOwnProperty(nextKey)) {
-                    output[nextKey] = source[nextKey];
-                  }
-                }
-              }
-            }
-            return output
-          };
-        })();
-      }
-    
-      let output = Object.assign({}, target);
-      if (this.isObject(target) && this.isObject(source)) {
-        Object.keys(source).forEach(key => {
-          if (this.isObject(source[key])) {
-            if (!(key in target)) {
-              Object.assign(output, {
-                [key]: source[key]
-              });
-            } else {
-              output[key] = this.extend(target[key], source[key]);
-            }
-          } else {
-            Object.assign(output, {
-              [key]: source[key]
-            });
-          }
-        });
-      }
-      return output
-    }
-  }
-
   var ApexChartsComponent = {
     props: {
       options: {
@@ -90,28 +37,29 @@
     mounted() {
       this.init();
     },
-    watch: {
-      series: {
-        handler: function () {
-          if (!this.chart) {
-            this.init();
-          } else {
-            this.chart.updateSeries(this.series, true);
-          }
-        },
-        deep: true
-      },
-      options: {
-        handler: function () {
-          if (!this.chart) {
-            this.init();
-          } else {
-            this.chart.updateOptions(this.options, true);
-          }
-        },
-        deep: true
-      }
+    created () {
+      this.$watch('options', options => {
+        if (!this.chart && options) {
+          this.init();
+        } else {
+          this.chart.updateOptions(this.options, true);
+        }
+      });
 
+      this.$watch('series', series => {
+        if (!this.chart && series) {
+          this.init();
+        } else {
+          this.chart.updateSeries(this.series, true);
+        }
+      }, { deep: true });
+
+      let watched = ['type', 'width', 'height'];
+      watched.forEach(prop => {
+        this.$watch(prop, () => {
+          this.refresh();
+        });
+      });
     },
     beforeDestroy() {
       if (!this.chart) {
@@ -133,7 +81,7 @@
           series: this.series
         };
 
-        const config = Utils.extend(this.options, newOptions);
+        const config = ApexCharts.merge(this.options, newOptions);
         this.chart = new ApexCharts(this.$el, config);
         this.chart.render();
       },
