@@ -4,8 +4,6 @@
   "description": "Vue.js wrapper for ApexCharts",
   "main": "dist/vue-apexcharts.js",
   "scripts": {
-    "unit": "karma start",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "rollup src/index.js -f umd -n VueApexCharts -g apexcharts:ApexCharts -o dist/vue-apexcharts.js",
     "build": "npm run bundle"
   },

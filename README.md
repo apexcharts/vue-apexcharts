@@ -1,4 +1,4 @@
-<p align="center"><img src="https://apexcharts.com/media/vue-apexcharts-logo.png"></p>
+<p align="center"><img src="https://apexcharts.com/media/vue-apexcharts.png"></p>
 
 <p align="center">
   <a href="https://github.com/apexcharts/vue-apexcharts/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
@@ -23,6 +23,7 @@
 ## Usage
 ```js
 import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
 ```
 
 To create a basic bar chart with minimal configuration, write as follows:
@@ -63,7 +64,7 @@ This will render the following chart
 <p align="center"><a href="https://apexcharts.com/javascript-chart-demos/column-charts/"><img src="https://apexcharts.com/media/first-bar-chart.svg"></a></p>
 
 ### How do I update the chart?
-Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a loot at the below example
+Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a look at the below example to see this in action
 <p align="center"><a href="#"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
 
 ```html
@@ -119,6 +120,38 @@ export default {
 };
 ```
 
+
+## Props
+- __series__ - `Array` (required)
+The series is an array which accepts object in the following format
+series: [{
+  name: 'visitors'
+  data: [23, 44, 56, 75, 56]
+}]
+The `data` property inside series accepts a variation of formats. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website.
+
+- __type__ - `String` (required)
+chart type, possible values :
+    - `line`
+    - `area`
+    - `bar`
+    - `pie`
+    - `donut`
+    - `scatter`
+    - `bubble`
+    - `heatmap`
+    - `radialBar`
+
+- __width__ -  `Number` || `String`
+Possible values for width can be `100%` or `400px` or just 400
+
+- __height__ -  `Number` || `String`
+Possible values for width can be `100%` or `300px` or just 300
+
+- __options__ - `Object`
+Charts's configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/)
+
+
 ## How to call methods of ApexCharts programatically?
 Sometimes, you may want to call other methods of the core ApexCharts library, and you can do so on `this.$apexcharts` global variable directly
 
@@ -128,9 +161,11 @@ this.$apexcharts.exec('vuechart-example', 'updateSeries', [{
   data: [40, 55, 65, 11, 23, 44, 54, 33]
 }])
 ```
+In the above method, `vuechart-example` is the ID of chart, `updateSeries` is the name of the method you want to call and the third parameter is the new Series you want to update.
+
 More info on the `.exec()` method can be found <a href="https://apexcharts.com/docs/methods/#exec">here</a>
 
-All other methods of ApexCharts can be called this way
+All other methods of ApexCharts can be called the same way.
 
 ## What's included
 
@@ -144,6 +179,16 @@ vue-apexcharts/
     ├── ApexCharts.component.js
     ├── Utils.js
     └── index.js
+```
+
+## Running the examples
+Basic Examples are included to show how to get started using ApexCharts with Vue easily.
+
+To run the examples,
+```bash
+cd example
+npm install
+npm run serve
 ```
 
 ## Development
