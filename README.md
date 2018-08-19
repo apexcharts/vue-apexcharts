@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/apexcharts/vue-apexcharts/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
-  <!--<a href="https://travis-ci.com/apexcharts/vue-apexcharts.js"><img src="https://api.travis-ci.com/apexcharts/vue-apexcharts.js.svg?branch=master" alt="build" /></a>-->
+  <a href="https://travis-ci.com/apexcharts/vue-apexcharts.js"><img src="https://api.travis-ci.com/apexcharts/vue-apexcharts.js.svg?branch=master" alt="build" /></a>
   <a href="https://www.npmjs.com/package/vue-apexcharts"><img src="https://img.shields.io/npm/v/vue-apexcharts.svg" alt="ver"></a>
 </p>
 
@@ -23,6 +23,7 @@
 ## Usage
 ```js
 import VueApexCharts from 'vue-apexcharts'
+
 Vue.use(VueApexCharts)
 ```
 
@@ -143,13 +144,16 @@ chart type, possible values :
     - `radialBar`
 
 - __width__ -  `Number` || `String`
-Possible values for width can be `100%` or `400px` or just 400
+
+  Possible values for width can be `100%` or `400px` or just 400
 
 - __height__ -  `Number` || `String`
-Possible values for width can be `100%` or `300px` or just 300
+
+  Possible values for width can be `100%` or `300px` or just 300
 
 - __options__ - `Object`
-Charts's configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/)
+
+  Charts's configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/)
 
 
 ## How to call methods of ApexCharts programatically?
