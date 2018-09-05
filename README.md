@@ -20,6 +20,10 @@
 ##### Installing via npm
 [![NPM](https://nodei.co/npm/vue-apexcharts.png?mini=true)](https://npmjs.org/package/vue-apexcharts)
 
+```bash
+npm install vue-apexcharts apexcharts
+```
+
 ## Usage
 ```js
 import VueApexCharts from 'vue-apexcharts'
@@ -61,10 +65,12 @@ export default {
     },
 };
 ```
+
 This will render the following chart
 <p align="center"><a href="https://apexcharts.com/javascript-chart-demos/column-charts/"><img src="https://apexcharts.com/media/first-bar-chart.svg"></a></p>
 
 ### How do I update the chart?
+
 Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a look at the below example to see this in action
 <p align="center"><a href="#"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
 
@@ -76,7 +82,7 @@ Simple! Just change the `series` or any `option` and it will automatically re-re
        <button @click="updateChart">Update!</button>
     </div>
    </div>
-   
+
 </template>
 ```
 
@@ -123,6 +129,7 @@ export default {
 
 
 ## Props
+
 - __series__ - `Array` (required)
 The series is an array which accepts object in the following format
 series: [{
@@ -157,6 +164,7 @@ chart type, possible values :
 
 
 ## How to call methods of ApexCharts programatically?
+
 Sometimes, you may want to call other methods of the core ApexCharts library, and you can do so on `this.$apexcharts` global variable directly
 
 Example
@@ -186,6 +194,7 @@ vue-apexcharts/
 ```
 
 ## Running the examples
+
 Basic Examples are included to show how to get started using ApexCharts with Vue easily.
 
 To run the examples,
@@ -196,6 +205,7 @@ npm run serve
 ```
 
 ## Development
+
 #### Install dependencies
 
 ```bash
@@ -203,9 +213,11 @@ npm install
 ```
 
 #### Bundling
+
 ```bash
 npm run build
 ```
 
 ## License
+
 Vue-ApexCharts is released under MIT license. You are free to use, modify and distribute this software, as long as the copyright header is left intact.
