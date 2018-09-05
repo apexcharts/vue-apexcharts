@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/apexcharts/vue-apexcharts/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
-  <a href="https://travis-ci.com/apexcharts/vue-apexcharts.js"><img src="https://api.travis-ci.com/apexcharts/vue-apexcharts.js.svg?branch=master" alt="build" /></a>
+  <a href="https://travis-ci.com/apexcharts/vue-apexcharts"><img src="https://api.travis-ci.com/apexcharts/vue-apexcharts.svg?branch=master" alt="build" /></a>
   <a href="https://www.npmjs.com/package/vue-apexcharts"><img src="https://img.shields.io/npm/v/vue-apexcharts.svg" alt="ver"></a>
 </p>
 

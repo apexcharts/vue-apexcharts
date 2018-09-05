@@ -23,13 +23,13 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "apexcharts": "^1.4.2"
+    "apexcharts": "^1.4.3"
   },
   "devDependencies": {
+    "apexcharts": "^1.4.3",
     "rollup": "^0.64.1",
     "rollup-plugin-istanbul": "^2.0.1",
-    "uglify-js": "^3.4.6",
-    "vue": "^2.5.17",
-    "apexcharts": "^1.4.2"
+    "uglify-js": "^3.4.9",
+    "vue": "^2.5.17"
   }
 }
