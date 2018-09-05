@@ -22,16 +22,14 @@
     "url": "https://github.com/apexcharts/vue-apexcharts/issues"
   },
   "license": "MIT",
-  "dependencies": {
-    "apexcharts": "^1.4.2"
-  },
   "peerDependencies": {
-    "vue": ">=1.0.0"
+    "apexcharts": "^1.4.2"
   },
   "devDependencies": {
     "rollup": "^0.64.1",
     "rollup-plugin-istanbul": "^2.0.1",
     "uglify-js": "^3.4.6",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "apexcharts": "^1.4.2"
   }
 }
