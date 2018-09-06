@@ -18,7 +18,6 @@
 ## Download and Installation
 
 ##### Installing via npm
-[![NPM](https://nodei.co/npm/vue-apexcharts.png?mini=true)](https://npmjs.org/package/vue-apexcharts)
 
 ```bash
 npm install vue-apexcharts apexcharts
