@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "apexcharts": "^1.4.12",
     "vue": "^2.5.17"
   },
   "devDependencies": {
