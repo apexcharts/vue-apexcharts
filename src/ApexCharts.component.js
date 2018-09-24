@@ -6,6 +6,9 @@ export default {
       type: Object,
       required: true
     },
+    yaxis: {
+      type: Object
+    },
     type: {
       type: String,
       required: true,
@@ -39,6 +42,14 @@ export default {
         this.chart.updateOptions(this.options, true);
       }
     })
+    
+    this.$watch('yaxis', yaxis => {
+      if (!this.chart && yaxis) {
+        this.init()
+      } else {
+        this.chart.updateOptions({ yaxis: this.yaxis }, true);
+      }
+    }, { deep: true })
 
     this.$watch('series', series => {
       if (!this.chart && series) {
