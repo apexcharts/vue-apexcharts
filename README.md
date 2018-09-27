@@ -31,7 +31,7 @@ Vue.use(VueApexCharts)
 ```
 
 To create a basic bar chart with minimal configuration, write as follows:
-```html
+```vue
 <template>
    <div>
      <apexcharts width="500" type="bar" :options="chartOptions" :series="series"></apexcharts>
@@ -73,7 +73,7 @@ This will render the following chart
 Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a look at the below example to see this in action
 <p align="center"><a href="#"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
 
-```html
+```vue
 <template>
    <div class="app">
      <apexcharts width="550" type="bar" :options="chartOptions" :series="series"></apexcharts>
