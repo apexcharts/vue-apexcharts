@@ -29,50 +29,53 @@
         default: 'auto'
       }
     },
-    data() {
+    data: function data() {
       return {
         chart: null
-      }
+      };
     },
-    mounted() {
+    mounted: function mounted() {
       this.init();
     },
-    created () {
-      this.$watch('options', options => {
-        if (!this.chart && options) {
-          this.init();
+    created: function created() {
+      var _this = this;
+
+      this.$watch('options', function (options) {
+        if (!_this.chart && options) {
+          _this.init();
         } else {
-          this.chart.updateOptions(this.options, true);
+          _this.chart.updateOptions(_this.options, true);
         }
       });
-
-      this.$watch('series', series => {
-        if (!this.chart && series) {
-          this.init();
+      this.$watch('series', function (series) {
+        if (!_this.chart && series) {
+          _this.init();
         } else {
-          this.chart.updateSeries(this.series, true);
+          _this.chart.updateSeries(_this.series, true);
         }
-      }, { deep: true });
-
-      let watched = ['type', 'width', 'height'];
-      watched.forEach(prop => {
-        this.$watch(prop, () => {
-          this.refresh();
+      }, {
+        deep: true
+      });
+      var watched = ['type', 'width', 'height'];
+      watched.forEach(function (prop) {
+        _this.$watch(prop, function () {
+          _this.refresh();
         });
       });
     },
-    beforeDestroy() {
+    beforeDestroy: function beforeDestroy() {
       if (!this.chart) {
-        return
+        return;
       }
+
       this.destroy();
     },
-    render(createElement) {
-  		return createElement('div');		
-  	},
+    render: function render(createElement) {
+      return createElement('div');
+    },
     methods: {
-      init() {
-        const newOptions = {
+      init: function init() {
+        var newOptions = {
           chart: {
             type: this.type,
             height: this.height,
@@ -80,39 +83,37 @@
           },
           series: this.series
         };
-
-        const config = ApexCharts.merge(this.options, newOptions);
+        var config = ApexCharts.merge(this.options, newOptions);
         this.chart = new ApexCharts(this.$el, config);
         this.chart.render();
       },
-      refresh() {
+      refresh: function refresh() {
         this.destroy();
         this.init();
       },
-      destroy() {
+      destroy: function destroy() {
         this.chart.destroy();
       },
-      updateSeries() {
+      updateSeries: function updateSeries() {
         this.$emit('updateSeries');
       },
-      updateOptions() {
+      updateOptions: function updateOptions() {
         this.$emit('updateOptions');
       }
     }
   };
 
-  const VueApexCharts = ApexChartsComponent;
+  var VueApexCharts = ApexChartsComponent;
 
   VueApexCharts.install = function (Vue) {
-      //adding a global method or property
-      Vue.ApexCharts = ApexCharts;
-    
-      // add the instance method
-      Object.defineProperty(Vue.prototype, '$apexcharts', {
-          get: function get() {
-              return ApexCharts
-          }
-      });
+    //adding a global method or property
+    Vue.ApexCharts = ApexCharts; // add the instance method
+
+    Object.defineProperty(Vue.prototype, '$apexcharts', {
+      get: function get() {
+        return ApexCharts;
+      }
+    });
   };
 
   return VueApexCharts;

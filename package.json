@@ -4,7 +4,7 @@
   "description": "Vue.js wrapper for ApexCharts",
   "main": "dist/vue-apexcharts.js",
   "scripts": {
-    "bundle": "rollup src/index.js -f umd -n VueApexCharts -g apexcharts:ApexCharts -o dist/vue-apexcharts.js",
+    "bundle": "rollup -c",
     "build": "npm run bundle"
   },
   "keywords": [
@@ -26,8 +26,17 @@
     "apexcharts": "^1.4.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-istanbul": "^2.0.1",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "uglify-js": "^3.4.9",
     "vue": "^2.5.17"
   }
