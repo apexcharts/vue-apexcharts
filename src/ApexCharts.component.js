@@ -83,7 +83,8 @@ export default {
           height: this.height,
           width: this.width
         },
-        series: this.series
+        series: this.series,
+        yaxis: this.yaxis
       }
 
       const config = ApexCharts.merge(this.options, newOptions);
