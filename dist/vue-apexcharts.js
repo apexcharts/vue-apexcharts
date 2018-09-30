@@ -9,8 +9,10 @@
   var ApexChartsComponent = {
     props: {
       options: {
-        type: Object,
-        required: true
+        type: Object
+      },
+      yaxis: {
+        type: Array
       },
       type: {
         type: String,
@@ -47,6 +49,17 @@
           _this.chart.updateOptions(_this.options, true);
         }
       });
+      this.$watch('yaxis', function (yaxis) {
+        if (!_this.chart && yaxis) {
+          _this.init();
+        } else {
+          _this.chart.updateOptions({
+            yaxis: _this.yaxis
+          }, true);
+        }
+      }, {
+        deep: true
+      });
       this.$watch('series', function (series) {
         if (!_this.chart && series) {
           _this.init();
@@ -81,7 +94,8 @@
             height: this.height,
             width: this.width
           },
-          series: this.series
+          series: this.series,
+          yaxis: this.yaxis
         };
         var config = ApexCharts.merge(this.options, newOptions);
         this.chart = new ApexCharts(this.$el, config);

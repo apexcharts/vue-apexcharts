@@ -129,37 +129,14 @@ export default {
 
 ## Props
 
-- __series__ - `Array` (required)
-The series is an array which accepts object in the following format
-series: [{
-  name: 'visitors'
-  data: [23, 44, 56, 75, 56]
-}]
-The `data` property inside series accepts a variation of formats. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website.
-
-- __type__ - `String` (required)
-chart type, possible values :
-    - `line`
-    - `area`
-    - `bar`
-    - `pie`
-    - `donut`
-    - `scatter`
-    - `bubble`
-    - `heatmap`
-    - `radialBar`
-
-- __width__ -  `Number` || `String`
-
-  Possible values for width can be `100%` or `400px` or just 400
-
-- __height__ -  `Number` || `String`
-
-  Possible values for width can be `100%` or `300px` or just 300
-
-- __options__ - `Object`
-
-  Charts's configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/)
+| Prop        | Type           | Description  |
+| ------------- |-------------| -----|
+| **series***| Array | The series is an array which accepts object in the following format. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website. |
+| **type*** | String  | `line`, `area`, `bar`, `pie`, `donut`, `scatter`, `bubble`, `heatmap`, `radialBar`  |
+| **width** | Number/String  | Possible values for width can be `100%` or `400px` or 400 |
+| **height** | Number/String | Possible values for width can be `100%` or `300px` or 300 |
+| **yaxis** | Array | The yaxis should be an array even if it includes 1 object [Read why](#why-yaxis-as-an-additional-prop) |
+| **options** | Object | The configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/) |
 
 
 ## How to call methods of ApexCharts programatically?
@@ -202,6 +179,11 @@ cd example
 npm install
 npm run serve
 ```
+
+## FAQ
+
+### Why yaxis as an additional prop?
+The `:options` property doesn't have the deep watcher set to true, and hence yaxis configuration go unnoticed on updates as yaxis is treated as an Array in ApexCharts (even in a single axis chart).
 
 ## Development
 

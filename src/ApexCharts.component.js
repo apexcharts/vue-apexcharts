@@ -3,11 +3,10 @@ import ApexCharts from 'apexcharts'
 export default {
   props: {
     options: {
-      type: Object,
-      required: true
+      type: Object
     },
     yaxis: {
-      type: Object
+      type: Array
     },
     type: {
       type: String,
