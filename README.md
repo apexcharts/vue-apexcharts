@@ -135,7 +135,6 @@ export default {
 | **type*** | String  | `line`, `area`, `bar`, `pie`, `donut`, `scatter`, `bubble`, `heatmap`, `radialBar`  |
 | **width** | Number/String  | Possible values for width can be `100%` or `400px` or 400 |
 | **height** | Number/String | Possible values for width can be `100%` or `300px` or 300 |
-| **yaxis** | Array | The yaxis should be an array even if it includes 1 object [Read why](#why-yaxis-as-an-additional-prop) |
 | **options** | Object | The configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/) |
 
 
@@ -179,11 +178,6 @@ cd example
 npm install
 npm run serve
 ```
-
-## FAQ
-
-### Why yaxis as an additional prop?
-The `:options` property doesn't have the deep watcher set to true, and hence yaxis configuration go unnoticed on updates as yaxis is treated as an Array in ApexCharts (even in a single axis chart).
 
 ## Development
 

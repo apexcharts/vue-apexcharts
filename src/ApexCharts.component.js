@@ -5,9 +5,6 @@ export default {
     options: {
       type: Object
     },
-    yaxis: {
-      type: Array
-    },
     type: {
       type: String,
       required: true,
@@ -41,14 +38,6 @@ export default {
         this.chart.updateOptions(this.options, true);
       }
     })
-    
-    this.$watch('yaxis', yaxis => {
-      if (!this.chart && yaxis) {
-        this.init()
-      } else {
-        this.chart.updateOptions({ yaxis: this.yaxis }, true);
-      }
-    }, { deep: true })
 
     this.$watch('series', series => {
       if (!this.chart && series) {
@@ -82,8 +71,7 @@ export default {
           height: this.height,
           width: this.width
         },
-        series: this.series,
-        yaxis: this.yaxis
+        series: this.series
       }
 
       const config = ApexCharts.merge(this.options, newOptions);
