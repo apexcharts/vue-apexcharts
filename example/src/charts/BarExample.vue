@@ -19,9 +19,6 @@ export default {
   data: function() {
     return {
       chartOptions: {
-        chart: {
-          id: 'basic-bar'
-        },
         plotOptions: {
           bar: {
             horizontal: true
