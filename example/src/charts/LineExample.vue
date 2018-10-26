@@ -25,10 +25,10 @@ export default {
         },
       },
       series: [{
-        name: 'series-1',
+        name: 'Series A',
         data: [30, 40, 45, 50, 49, 60, 70, 91]
       }, {
-        name: 'series-2',
+        name: 'Series B',
         data: [23, 43, 54, 12, 44, 52, 32, 11]
       }]
     }
