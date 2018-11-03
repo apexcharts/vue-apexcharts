@@ -66,12 +66,12 @@ export default {
 ```
 
 This will render the following chart
-<p align="center"><a href="https://apexcharts.com/javascript-chart-demos/column-charts/"><img src="https://apexcharts.com/media/first-bar-chart.svg"></a></p>
+<p><a href="https://apexcharts.com/javascript-chart-demos/column-charts/"><img src="https://apexcharts.com/media/first-bar-chart.svg"></a></p>
 
 ### How do I update the chart?
 
-Simple! Just change the `series` or any `option` and it will automatically re-render the chart. Have a look at the below example to see this in action
-<p align="center"><a href="#"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
+Simple! Just change the `series` or any `option` and it will automatically re-render the chart. <br/> Click on the below example to see this in action
+<p><a href="https://codesandbox.io/s/voyy36o7y"><img src="https://apexcharts.com/media/vue-chart-updation.gif"></a></p>
 
 ```vue
 <template>
@@ -132,15 +132,43 @@ export default {
 | Prop        | Type           | Description  |
 | ------------- |-------------| -----|
 | **series***| Array | The series is an array which accepts object in the following format. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website. |
-| **type*** | String  | `line`, `area`, `bar`, `pie`, `donut`, `scatter`, `bubble`, `heatmap`, `radialBar`  |
+| **type*** | String  | `line`, `area`, `bar`, `pie`, `donut`, `scatter`, `bubble`, `heatmap`, `radialBar`, `candlestick`  |
 | **width** | Number/String  | Possible values for width can be `100%` or `400px` or 400 |
 | **height** | Number/String | Possible values for width can be `100%` or `300px` or 300 |
 | **options** | Object | The configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/) |
 
 
-## How to call methods of ApexCharts programatically?
+## Methods
+| Method        | Description    |
+| ------------- | -----|
+| <a href="https://apexcharts.com/docs/methods/#updateSeries">updateSeries</a> | Allows you to update the series array overriding the existing one |
+| <a href="https://apexcharts.com/docs/methods/#updateOptions">updateOptions</a> | Allows you to update the configuration object |
+| <a href="https://apexcharts.com/docs/methods/#toggleSeries">toggleSeries</a> | Allows you to toggle the visibility of series programatically. Useful when you have custom legend. |
+| <a href="https://apexcharts.com/docs/methods/#appendData">appendData</a> | Allows you to append new data to the series array. |
+| <a href="https://apexcharts.com/docs/methods/#addtext">addText</a> | The addText() method can be used to draw text after chart is rendered. |
+| <a href="https://apexcharts.com/docs/methods/#addxaxisannotation">addXaxisAnnotation</a> | Draw x-axis annotations after chart is rendered. |
+| <a href="https://apexcharts.com/docs/methods/#addyaxisannotation">addYaxisAnnotation</a> | Draw y-axis annotations after chart is rendered. |
+| <a href="https://apexcharts.com/docs/methods/#addpointannotation">addPointAnnotation</a> | Draw point (xy) annotations after chart is rendered. |
 
-Sometimes, you may want to call other methods of the core ApexCharts library, and you can do so on `this.$apexcharts` global variable directly
+How to call the methods mentioned above?
+
+```html
+<template>
+  <div class="example">
+    <apexcharts ref="chart" width="500" :options="chartOptions" :series="series"></apexcharts>
+  </div>
+</template>
+
+<script>
+  functionName: function() {
+    this.$refs.chart.updateOptions({ colors: newColors })
+  },
+</script>
+```
+
+## How to call methods of ApexCharts without referencing the chart element?
+
+Sometimes, you may want to call methods of the core ApexCharts library from some other place, and you can do so on `this.$apexcharts` global variable directly. You need to target the chart by <code>chart.id</code> while calling this method
 
 Example
 ```js
@@ -192,6 +220,12 @@ npm install
 ```bash
 npm run build
 ```
+
+
+## Supporting ApexCharts
+ApexCharts is an open source project. <br /> You can help by becoming a sponsor on <a href="https://patreon.com/junedchhipa">Patreon</a> or doing a one time donation on <a href="https://paypal.me/junedchhipa">PayPal</a> <br />
+
+<a href="https://patreon.com/junedchhipa"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" /> </a>
 
 ## License
 

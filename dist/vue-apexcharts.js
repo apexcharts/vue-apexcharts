@@ -93,11 +93,29 @@
       destroy: function destroy() {
         this.chart.destroy();
       },
-      updateSeries: function updateSeries() {
-        this.$emit('updateSeries');
+      updateSeries: function updateSeries(newSeries, animate) {
+        this.chart.updateSeries(newSeries, animate);
       },
-      updateOptions: function updateOptions() {
-        this.$emit('updateOptions');
+      updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
+        this.chart.updateOptions(newOptions, redrawPaths, animate);
+      },
+      toggleSeries: function toggleSeries(seriesName) {
+        this.chart.toggleSeries(seriesName);
+      },
+      appendData: function appendData(newData) {
+        this.chart.appendData(newData);
+      },
+      addText: function addText(options) {
+        this.chart.addText(options);
+      },
+      addXaxisAnnotation: function addXaxisAnnotation(options) {
+        this.chart.addXaxisAnnotation(options);
+      },
+      addYaxisAnnotation: function addYaxisAnnotation(options) {
+        this.chart.addYaxisAnnotation(options);
+      },
+      addPointAnnotation: function addPointAnnotation(options) {
+        this.chart.addPointAnnotation(options);
       }
     }
   };

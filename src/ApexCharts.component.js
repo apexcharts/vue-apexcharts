@@ -85,11 +85,29 @@ export default {
     destroy() {
       this.chart.destroy()
     },
-    updateSeries() {
-      this.$emit('updateSeries')
+    updateSeries(newSeries, animate) {
+      this.chart.updateSeries(newSeries, animate)
     },
-    updateOptions() {
-      this.$emit('updateOptions')
-    }
+    updateOptions(newOptions, redrawPaths, animate) {
+      this.chart.updateOptions(newOptions, redrawPaths, animate)
+    },
+    toggleSeries(seriesName) {
+      this.chart.toggleSeries(seriesName)
+    },
+    appendData(newData) {
+      this.chart.appendData(newData)
+    },
+    addText(options) {
+      this.chart.addText(options)
+    },
+    addXaxisAnnotation(options) {
+      this.chart.addXaxisAnnotation(options)
+    },
+    addYaxisAnnotation(options) {
+      this.chart.addYaxisAnnotation(options)
+    },
+    addPointAnnotation(options) {
+      this.chart.addPointAnnotation(options)
+    },
   }
 }
