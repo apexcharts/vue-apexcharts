@@ -1,18 +1,12 @@
 <template>
 <div class="example">
-  <apexcharts width="500" height="350" type="line" :options="chartOptions" :series="series"></apexcharts>
+  <apexchart width="500" height="350" type="line" :options="chartOptions" :series="series"></apexchart>
 </div>
 </template>
 
 <script>
-//import VueApexCharts from 'vue-apexcharts'
-import VueApexCharts from '../../../dist/vue-apexcharts'
-
 export default {
   name: 'MixedExample',
-  components: {
-    apexcharts: VueApexCharts,
-  },
   data: function() {
     return {
       chartOptions: {

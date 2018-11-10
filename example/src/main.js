@@ -12,6 +12,9 @@ import RadialBarExample from './charts/RadialBarExample'
 import BubbleExample from './charts/BubbleExample'
 import HeatmapExample from './charts/HeatmapExample'
 import LineExample from './charts/LineExample'
+import VueApexCharts from '../../dist/vue-apexcharts';
+
+Vue.component('apexchart', VueApexCharts)
 
 Vue.use(VueRouter)
 

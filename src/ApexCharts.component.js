@@ -35,7 +35,7 @@ export default {
       if (!this.chart && options) {
         this.init()
       } else {
-        this.chart.updateOptions(this.options, true);
+        this.chart.updateOptions(this.options);
       }
     })
 
@@ -43,7 +43,7 @@ export default {
       if (!this.chart && series) {
         this.init()
       } else {
-        this.chart.updateSeries(this.series, true);
+        this.chart.updateSeries(this.series);
       }
     }, { deep: true })
 
@@ -109,5 +109,8 @@ export default {
     addPointAnnotation(options) {
       this.chart.addPointAnnotation(options)
     },
+    clearAnnotations() {
+      this.chart.clearAnnotations(options)
+    }
   }
 }

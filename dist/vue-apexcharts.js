@@ -43,14 +43,14 @@
         if (!_this.chart && options) {
           _this.init();
         } else {
-          _this.chart.updateOptions(_this.options, true);
+          _this.chart.updateOptions(_this.options);
         }
       });
       this.$watch('series', function (series) {
         if (!_this.chart && series) {
           _this.init();
         } else {
-          _this.chart.updateSeries(_this.series, true);
+          _this.chart.updateSeries(_this.series);
         }
       }, {
         deep: true
@@ -116,6 +116,9 @@
       },
       addPointAnnotation: function addPointAnnotation(options) {
         this.chart.addPointAnnotation(options);
+      },
+      clearAnnotations: function clearAnnotations() {
+        this.chart.clearAnnotations(options);
       }
     }
   };

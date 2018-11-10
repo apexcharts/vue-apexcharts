@@ -1,6 +1,6 @@
 <template>
   <div class="example">
-    <apexcharts width="350" type="donut" :options="chartOptions" :series="series"></apexcharts>
+    <apexchart ref="donut" width="350" type="donut" :options="chartOptions" :series="series"></apexchart>
     <div>
        <button @click="updateChart">Update!</button>
     </div>
@@ -8,14 +8,8 @@
 </template>
 
 <script>
-//import VueApexCharts from 'vue-apexcharts'
-import VueApexCharts from '../../../dist/vue-apexcharts'
-
 export default {
   name: 'DonutExample',
-  components: {
-    apexcharts: VueApexCharts,
-  },
   data: function() {
     return {
       chartOptions: {
