@@ -139,6 +139,9 @@ export default {
 
 
 ## Methods
+
+You don't actually need to call updateSeries() or updateOptions() manually. Changing the props will automatically update the chart. You only need to call these methods to update the chart forcefully.
+
 | Method        | Description    |
 | ------------- | -----|
 | <a href="https://apexcharts.com/docs/methods/#updateSeries">updateSeries</a> | Allows you to update the series array overriding the existing one |
@@ -155,13 +158,13 @@ How to call the methods mentioned above?
 ```html
 <template>
   <div class="example">
-    <apexcharts ref="chart" width="500" :options="chartOptions" :series="series"></apexcharts>
+    <apexcharts ref="demoChart" width="500" :options="chartOptions" :series="series"></apexcharts>
   </div>
 </template>
 
 <script>
   functionName: function() {
-    this.$refs.chart.updateOptions({ colors: newColors })
+    this.$refs.demoChart.updateOptions({ colors: newColors })
   },
 </script>
 ```
