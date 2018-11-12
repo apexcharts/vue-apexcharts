@@ -110,7 +110,7 @@ export default {
       this.chart.addPointAnnotation(options)
     },
     clearAnnotations() {
-      this.chart.clearAnnotations(options)
+      this.chart.clearAnnotations()
     }
   }
 }

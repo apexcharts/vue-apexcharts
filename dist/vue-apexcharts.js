@@ -118,7 +118,7 @@
         this.chart.addPointAnnotation(options);
       },
       clearAnnotations: function clearAnnotations() {
-        this.chart.clearAnnotations(options);
+        this.chart.clearAnnotations();
       }
     }
   };
