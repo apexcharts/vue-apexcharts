@@ -108,14 +108,14 @@
       addText: function addText(options) {
         this.chart.addText(options);
       },
-      addXaxisAnnotation: function addXaxisAnnotation(options) {
-        this.chart.addXaxisAnnotation(options);
+      addXaxisAnnotation: function addXaxisAnnotation(options, pushToMemory) {
+        this.chart.addXaxisAnnotation(options, pushToMemory);
       },
-      addYaxisAnnotation: function addYaxisAnnotation(options) {
-        this.chart.addYaxisAnnotation(options);
+      addYaxisAnnotation: function addYaxisAnnotation(options, pushToMemory) {
+        this.chart.addYaxisAnnotation(options, pushToMemory);
       },
-      addPointAnnotation: function addPointAnnotation(options) {
-        this.chart.addPointAnnotation(options);
+      addPointAnnotation: function addPointAnnotation(options, pushToMemory) {
+        this.chart.addPointAnnotation(options, pushToMemory);
       },
       clearAnnotations: function clearAnnotations() {
         this.chart.clearAnnotations();

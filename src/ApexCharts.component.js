@@ -100,14 +100,14 @@ export default {
     addText(options) {
       this.chart.addText(options)
     },
-    addXaxisAnnotation(options) {
-      this.chart.addXaxisAnnotation(options)
+    addXaxisAnnotation(options, pushToMemory) {
+      this.chart.addXaxisAnnotation(options, pushToMemory)
     },
-    addYaxisAnnotation(options) {
-      this.chart.addYaxisAnnotation(options)
+    addYaxisAnnotation(options, pushToMemory) {
+      this.chart.addYaxisAnnotation(options, pushToMemory)
     },
-    addPointAnnotation(options) {
-      this.chart.addPointAnnotation(options)
+    addPointAnnotation(options, pushToMemory) {
+      this.chart.addPointAnnotation(options, pushToMemory)
     },
     clearAnnotations() {
       this.chart.clearAnnotations()
