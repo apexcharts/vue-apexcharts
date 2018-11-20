@@ -27,25 +27,21 @@ npm install vue-apexcharts apexcharts
 ```js
 import VueApexCharts from 'vue-apexcharts'
 
-Vue.use(VueApexCharts)
+Vue.component('apexchart', VueApexCharts)
 ```
 
 To create a basic bar chart with minimal configuration, write as follows:
 ```vue
 <template>
    <div>
-     <apexcharts width="500" type="bar" :options="chartOptions" :series="series"></apexcharts>
+     <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
    </div>
 </template>
 ```
 
 ```js
-import VueApexCharts from 'vue-apexcharts'
 
 export default {
-    components: {
-      apexcharts: VueApexCharts,
-    },
     data: function() {
       return {
         chartOptions: {
@@ -76,7 +72,7 @@ Simple! Just change the `series` or any `option` and it will automatically re-re
 ```vue
 <template>
    <div class="app">
-     <apexcharts width="550" type="bar" :options="chartOptions" :series="series"></apexcharts>
+     <apexchart width="550" type="bar" :options="chartOptions" :series="series"></apexchart>
      <div>
        <button @click="updateChart">Update!</button>
     </div>
@@ -158,7 +154,7 @@ How to call the methods mentioned above?
 ```html
 <template>
   <div class="example">
-    <apexcharts ref="demoChart" width="500" :options="chartOptions" :series="series"></apexcharts>
+    <apexchart ref="demoChart" width="500" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>
 
