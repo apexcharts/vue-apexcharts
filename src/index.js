@@ -6,6 +6,7 @@ const VueApexCharts = ApexChartsComponent;
 VueApexCharts.install = function (Vue) {
     //adding a global method or property
     Vue.ApexCharts = ApexCharts;
+    window.ApexCharts = ApexCharts;
   
     // add the instance method
     Object.defineProperty(Vue.prototype, '$apexcharts', {

@@ -17,7 +17,10 @@ module.exports = {
   output: {
     name: 'VueApexCharts', 
     file: 'dist/vue-apexcharts.js',
-    format: 'umd'
+    format: 'umd',
+    globals: {
+      "apexcharts": "ApexCharts"
+    }
   },
   external: [ 'apexcharts' ],
   plugins: pluginOptions
