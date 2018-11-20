@@ -26,6 +26,7 @@ npm install vue-apexcharts apexcharts
 ## Usage
 ```js
 import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 ```
