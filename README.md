@@ -124,6 +124,32 @@ export default {
 ```
 
 
+**Important:** While updating the options, make sure to update the outermost property even when you need to update the nested property.
+
+✅ Do this
+```javascript
+this.chartOptions = {...this.chartOptions, ...{
+    xaxis: {
+        labels: {
+           style: {
+             colors: ['red']
+           }
+        }
+    }
+}}
+```
+
+❌ Not this
+```javascript
+this.chartOptions.xaxis = {
+    labels: {
+        style: {
+          colors: ['red']
+        }
+    }
+}}
+```
+
 ## Props
 
 | Prop        | Type           | Description  |
