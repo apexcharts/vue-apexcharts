@@ -13,7 +13,6 @@
       },
       type: {
         type: String,
-        required: true,
         default: 'line'
       },
       series: {
@@ -128,7 +127,7 @@
   VueApexCharts.install = function (Vue) {
     //adding a global method or property
     Vue.ApexCharts = ApexCharts;
-    window.ApexCharts = ApexCharts;
+    window.ApexCharts = ApexCharts; // add the instance method
 
     Object.defineProperty(Vue.prototype, '$apexcharts', {
       get: function get() {
