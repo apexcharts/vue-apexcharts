@@ -107,6 +107,9 @@
       addText: function addText(options) {
         this.chart.addText(options);
       },
+      dataURI: function dataURI() {
+        return this.chart.dataURI();
+      },
       addXaxisAnnotation: function addXaxisAnnotation(options, pushToMemory) {
         this.chart.addXaxisAnnotation(options, pushToMemory);
       },

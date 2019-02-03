@@ -99,6 +99,9 @@ export default {
     addText(options) {
       this.chart.addText(options)
     },
+    dataURI() {
+      return this.chart.dataURI();
+    },
     addXaxisAnnotation(options, pushToMemory) {
       this.chart.addXaxisAnnotation(options, pushToMemory)
     },
