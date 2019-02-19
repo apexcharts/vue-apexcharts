@@ -119,11 +119,5 @@ export default {
     clearAnnotations() {
       this.chart.clearAnnotations()
     },
-    handleClick(event, chartContext, config) {
-      this.$emit("click", { event, chartContext, config });
-    },
-    handleDataPointSelection(event, chartContext, config) {
-      this.$emit("dataPointSelection", { event, chartContext, config });
-    },
   }
 }
