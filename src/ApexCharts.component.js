@@ -82,11 +82,15 @@ export default {
       this.chart = new ApexCharts(this.$el, config)
       this.chart.render()
     },
+    isObject(item) {
+      return (
+        item && typeof item === 'object' && !Array.isArray(item) && item != null
+      )
+    },
     merge(target, source) {
       if (typeof Object.assign !== 'function') {
         (function() {
           Object.assign = function(target) {
-            'use strict'
             // We must check against these specific cases.
             if (target === undefined || target === null) {
               throw new TypeError('Cannot convert undefined or null to object')
