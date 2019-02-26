@@ -21,12 +21,12 @@ export default {
       default: 'auto'
     }
   },
-  data() {
+  data () {
     return {
       chart: null
     }
   },
-  mounted() {
+  mounted () {
     this.init()
   },
   created () {
@@ -34,7 +34,7 @@ export default {
       if (!this.chart && options) {
         this.init()
       } else {
-        this.chart.updateOptions(this.options);
+        this.chart.updateOptions(this.options)
       }
     })
 
@@ -42,7 +42,7 @@ export default {
       if (!this.chart && series) {
         this.init()
       } else {
-        this.chart.updateSeries(this.series);
+        this.chart.updateSeries(this.series)
       }
     }, { deep: true })
 
@@ -53,17 +53,17 @@ export default {
       })
     })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (!this.chart) {
       return
     }
     this.destroy()
   },
-  render(createElement) {
-		return createElement('div');		
-	},
+  render (createElement) {
+    return createElement('div')
+  },
   methods: {
-    init() {
+    init () {
       const newOptions = {
         chart: {
           type: this.type,
@@ -73,45 +73,45 @@ export default {
         series: this.series
       }
 
-      const config = ApexCharts.merge(this.options, newOptions);
+      const config = ApexCharts.merge(this.options, newOptions)
       this.chart = new ApexCharts(this.$el, config)
       this.chart.render()
     },
-    refresh() {
+    refresh () {
       this.destroy()
       this.init()
     },
-    destroy() {
+    destroy () {
       this.chart.destroy()
     },
-    updateSeries(newSeries, animate) {
+    updateSeries (newSeries, animate) {
       this.chart.updateSeries(newSeries, animate)
     },
-    updateOptions(newOptions, redrawPaths, animate) {
+    updateOptions (newOptions, redrawPaths, animate) {
       this.chart.updateOptions(newOptions, redrawPaths, animate)
     },
-    toggleSeries(seriesName) {
+    toggleSeries (seriesName) {
       this.chart.toggleSeries(seriesName)
     },
-    appendData(newData) {
+    appendData (newData) {
       this.chart.appendData(newData)
     },
-    addText(options) {
+    addText (options) {
       this.chart.addText(options)
     },
-    dataURI() {
-      return this.chart.dataURI();
+    dataURI () {
+      return this.chart.dataURI()
     },
-    addXaxisAnnotation(options, pushToMemory) {
+    addXaxisAnnotation (options, pushToMemory) {
       this.chart.addXaxisAnnotation(options, pushToMemory)
     },
-    addYaxisAnnotation(options, pushToMemory) {
+    addYaxisAnnotation (options, pushToMemory) {
       this.chart.addYaxisAnnotation(options, pushToMemory)
     },
-    addPointAnnotation(options, pushToMemory) {
+    addPointAnnotation (options, pushToMemory) {
       this.chart.addPointAnnotation(options, pushToMemory)
     },
-    clearAnnotations() {
+    clearAnnotations () {
       this.chart.clearAnnotations()
     }
   }

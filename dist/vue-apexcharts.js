@@ -95,6 +95,9 @@
       updateSeries: function updateSeries(newSeries, animate) {
         this.chart.updateSeries(newSeries, animate);
       },
+      appendSeries: function appendSeries(newSeries, animate) {
+        this.chart.appendSeries(newSeries, animate);
+      },
       updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
         this.chart.updateOptions(newOptions, redrawPaths, animate);
       },
