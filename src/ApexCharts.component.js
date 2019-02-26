@@ -78,7 +78,7 @@ export default {
         newOptions.chart.events[evt] = this.$listeners[evt];
       });
 
-      const config = this.merge(this.options, newOptions);
+      const config = this.extend(this.options, newOptions);
       this.chart = new ApexCharts(this.$el, config)
       this.chart.render()
     },
@@ -87,7 +87,7 @@ export default {
         item && typeof item === 'object' && !Array.isArray(item) && item != null
       )
     },
-    merge(target, source) {
+    extend(target, source) {
       if (typeof Object.assign !== 'function') {
         (function() {
           Object.assign = function(target) {
