@@ -68,12 +68,17 @@ export default {
         chart: {
           type: this.type,
           height: this.height,
-          width: this.width
+          width: this.width,
+          events: {}
         },
         series: this.series
       }
 
-      const config = ApexCharts.merge(this.options, newOptions)
+      Object.keys(this.$listeners).forEach((evt) => {
+        newOptions.chart.events[evt] = this.$listeners[evt];
+      });
+
+      const config = ApexCharts.merge(this.options, newOptions);
       this.chart = new ApexCharts(this.$el, config)
       this.chart.render()
     },
@@ -113,6 +118,6 @@ export default {
     },
     clearAnnotations () {
       this.chart.clearAnnotations()
-    }
+    },
   }
 }
