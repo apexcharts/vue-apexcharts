@@ -61,6 +61,9 @@
         chart: null
       };
     },
+    beforeMount: function beforeMount() {
+      window.ApexCharts = ApexCharts;
+    },
     mounted: function mounted() {
       this.init();
     },
@@ -212,6 +215,7 @@
   };
 
   var VueApexCharts = ApexChartsComponent;
+  window.ApexCharts = ApexCharts;
 
   VueApexCharts.install = function (Vue) {
     //adding a global method or property

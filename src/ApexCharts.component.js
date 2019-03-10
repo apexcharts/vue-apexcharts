@@ -26,6 +26,9 @@ export default {
       chart: null
     }
   },
+  beforeMount() {
+    window.ApexCharts = ApexCharts
+  },
   mounted () {
     this.init()
   },

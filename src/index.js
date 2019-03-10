@@ -2,6 +2,7 @@ import ApexCharts from 'apexcharts'
 import ApexChartsComponent from './ApexCharts.component';
 
 const VueApexCharts = ApexChartsComponent;
+window.ApexCharts = ApexCharts;
 
 VueApexCharts.install = function (Vue) {
     //adding a global method or property
