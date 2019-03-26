@@ -1,6 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import copy from 'rollup-plugin-copy';
 
 let pluginOptions = [
   resolve({
@@ -9,6 +10,10 @@ let pluginOptions = [
   commonjs(),
   babel({
     exclude: 'node_modules/**'
+  }),
+  copy({
+    'typings': 'dist',
+    verbose: true
   })
 ];
 
