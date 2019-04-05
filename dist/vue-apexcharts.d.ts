@@ -1,5 +1,5 @@
-import Vue, { Component } from 'vue';
-import { PluginFunction } from 'vue/types/plugin';
+import Vue, { Component, ComponentOptions } from 'vue';
+import { PluginObject } from 'vue/types/plugin';
 import ApexCharts, { ApexOptions } from 'apexcharts';
 
 interface VueApexChartsComponent extends Vue {
@@ -27,7 +27,7 @@ interface VueApexChartsComponent extends Vue {
   dataURI(): Promise<string>;
 }
 
-declare const VueApexCharts: Component<VueApexChartsComponent> & PluginFunction<VueApexChartsComponent>;
+declare const VueApexCharts: Component & ComponentOptions<Vue> & PluginObject<any>;
 
 export default VueApexCharts;
 
