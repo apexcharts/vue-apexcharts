@@ -1,10 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('apexcharts')) :
-  typeof define === 'function' && define.amd ? define(['apexcharts'], factory) :
-  (global.VueApexCharts = factory(global.ApexCharts));
-}(this, (function (ApexCharts) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('apexcharts/dist/apexcharts.common'), require('apexcharts')) :
+  typeof define === 'function' && define.amd ? define(['apexcharts/dist/apexcharts.common', 'apexcharts'], factory) :
+  (global.VueApexCharts = factory(global.ApexCharts,global.ApexCharts));
+}(this, (function (ApexCharts,ApexCharts$1) { 'use strict';
 
   ApexCharts = ApexCharts && ApexCharts.hasOwnProperty('default') ? ApexCharts['default'] : ApexCharts;
+  ApexCharts$1 = ApexCharts$1 && ApexCharts$1.hasOwnProperty('default') ? ApexCharts$1['default'] : ApexCharts$1;
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -215,16 +216,16 @@
   };
 
   var VueApexCharts = ApexChartsComponent;
-  window.ApexCharts = ApexCharts;
+  window.ApexCharts = ApexCharts$1;
 
   VueApexCharts.install = function (Vue) {
     //adding a global method or property
-    Vue.ApexCharts = ApexCharts;
-    window.ApexCharts = ApexCharts; // add the instance method
+    Vue.ApexCharts = ApexCharts$1;
+    window.ApexCharts = ApexCharts$1; // add the instance method
 
     Object.defineProperty(Vue.prototype, '$apexcharts', {
       get: function get() {
-        return ApexCharts;
+        return ApexCharts$1;
       }
     });
   };
