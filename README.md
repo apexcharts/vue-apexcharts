@@ -20,7 +20,8 @@
 ##### Installing via npm
 
 ```bash
-npm install vue-apexcharts apexcharts
+npm install --save apexcharts
+npm install --save vue-apexcharts
 ```
 
 ## Usage
