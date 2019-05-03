@@ -1,6 +1,6 @@
 import Vue, { Component, ComponentOptions } from 'vue';
 import { PluginObject } from 'vue/types/plugin';
-import ApexCharts, { ApexOptions } from 'apexcharts';
+import ApexCharts, { ApexOptions, ApexAxisChartSeries, ApexNonAxisChartSeries } from 'apexcharts';
 
 interface VueApexChartsComponent extends Vue {
   // data
