@@ -12,7 +12,7 @@ export default {
     series: {
       type: Array,
       required: true,
-      default: []
+      default: () => []
     },
     width: {
       default: '100%'

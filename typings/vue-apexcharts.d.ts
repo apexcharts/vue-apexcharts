@@ -8,7 +8,7 @@ interface VueApexChartsComponent extends Vue {
   // props
   options?: ApexOptions;
   type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar';
-  series: ApexAxisChartSeries | ApexNonAxisChartSeries;
+  series: any;
   width?: string | number;
   height?: string | number;
   // method
@@ -16,7 +16,7 @@ interface VueApexChartsComponent extends Vue {
   refresh(): void;
   destroy(): void;
   updateOptions(options: any, redrawPaths?: boolean, animate?: boolean): void;
-  updateSeries(newSeries: ApexAxisChartSeries | ApexNonAxisChartSeries, animate: boolean): void;
+  updateSeries(newSeries: any, animate: boolean): void;
   toggleSeries(seriesName: string): void;
   appendData(newData: any): void;
   addText(options: any, pushToMemory?: boolean, context?: any): void;

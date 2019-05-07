@@ -48,7 +48,9 @@
       series: {
         type: Array,
         required: true,
-        default: []
+        default: function _default() {
+          return [];
+        }
       },
       width: {
         default: '100%'
