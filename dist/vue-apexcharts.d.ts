@@ -18,6 +18,8 @@ interface VueApexChartsComponent extends Vue {
   updateOptions(options: any, redrawPaths?: boolean, animate?: boolean): void;
   updateSeries(newSeries: any, animate: boolean): void;
   toggleSeries(seriesName: string): void;
+  resetSeries(): void;
+  toggleDataPointSelection(seriesIndex: number, dataPointIndex?: number): any;
   appendData(newData: any): void;
   addText(options: any, pushToMemory?: boolean, context?: any): void;
   addXaxisAnnotation(options: any, pushToMemory?: boolean, context?: any): void;

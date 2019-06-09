@@ -193,6 +193,12 @@
       toggleSeries: function toggleSeries(seriesName) {
         this.chart.toggleSeries(seriesName);
       },
+      resetSeries: function resetSeries() {
+        this.chart.resetSeries();
+      },
+      toggleDataPointSelection: function toggleDataPointSelection(seriesIndex, dataPointIndex) {
+        this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex);
+      },
       appendData: function appendData(newData) {
         this.chart.appendData(newData);
       },
