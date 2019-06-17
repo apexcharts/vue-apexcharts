@@ -1,4 +1,4 @@
-import ApexCharts from 'apexcharts/dist/apexcharts.common'
+import ApexCharts from 'apexcharts'
 
 export default {
   props: {
