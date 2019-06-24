@@ -6,8 +6,7 @@ export default {
       type: Object
     },
     type: {
-      type: String,
-      default: 'line'
+      type: String
     },
     series: {
       type: Array,
@@ -69,7 +68,7 @@ export default {
     init () {
       const newOptions = {
         chart: {
-          type: this.type,
+          type: this.type || this.options.chart.type || 'line',
           height: this.height,
           width: this.width,
           events: {}
