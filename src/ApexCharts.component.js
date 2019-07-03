@@ -151,6 +151,9 @@ export default {
     toggleSeries (seriesName) {
       this.chart.toggleSeries(seriesName)
     },
+    appendSeries (newSeries, animate) {
+      this.chart.appendSeries(newSeries, animate)
+    },
     resetSeries () {
       this.chart.resetSeries()
     },
