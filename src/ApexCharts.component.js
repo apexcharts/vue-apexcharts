@@ -38,7 +38,7 @@ export default {
       } else {
         this.chart.updateOptions(this.options)
       }
-    })
+    }, { deep: true })
 
     this.$watch('series', series => {
       if (!this.chart && series) {
