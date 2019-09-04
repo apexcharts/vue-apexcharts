@@ -46,8 +46,7 @@ export default {
       } else {
         this.chart.updateSeries(this.series)
       }
-    }, { deep: true })
-
+    })
     let watched = ['type', 'width', 'height']
     watched.forEach(prop => {
       this.$watch(prop, () => {

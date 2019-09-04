@@ -41,8 +41,7 @@
         type: Object
       },
       type: {
-        type: String,
-        default: 'line'
+        type: String
       },
       series: {
         type: Array,
@@ -85,8 +84,6 @@
         } else {
           _this.chart.updateSeries(_this.series);
         }
-      }, {
-        deep: true
       });
       var watched = ['type', 'width', 'height'];
       watched.forEach(function (prop) {
@@ -111,7 +108,7 @@
 
         var newOptions = {
           chart: {
-            type: this.type,
+            type: this.type || this.options.chart.type || 'line',
             height: this.height,
             width: this.width,
             events: {}
@@ -191,6 +188,9 @@
       },
       toggleSeries: function toggleSeries(seriesName) {
         this.chart.toggleSeries(seriesName);
+      },
+      appendSeries: function appendSeries(newSeries, animate) {
+        this.chart.appendSeries(newSeries, animate);
       },
       resetSeries: function resetSeries() {
         this.chart.resetSeries();
