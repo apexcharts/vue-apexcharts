@@ -155,10 +155,10 @@ this.chartOptions.xaxis = {
 
 | Prop        | Type           | Description  |
 | ------------- |-------------| -----|
-| **series***| Array | The series is an array which accepts object in the following format. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website. |
+| **series***| Array | The series is an array which accepts an object in the following format. To know more about the format of dataSeries, checkout [Series](https://apexcharts.com/docs/series/) docs on the website. |
 | **type*** | String  | `line`, `area`, `bar`, `pie`, `donut`, `scatter`, `bubble`, `heatmap`, `radialBar`, `candlestick`  |
-| **width** | Number/String  | Possible values for width can be `100%` or `400px` or 400 |
-| **height** | Number/String | Possible values for width can be `100%` or `300px` or 300 |
+| **width** | Number/String  | Possible values for width can be `100%` or `400px` or `400` |
+| **height** | Number/String | Possible values for height can be `100%` or `300px` or `300` |
 | **options** | Object | The configuration object, see options on [API (Reference)](https://apexcharts.com/docs/options/chart/type/) |
 
 
