@@ -81,7 +81,7 @@ export default {
 
       const config = this.extend(this.options, newOptions);
       this.chart = new ApexCharts(this.$el, config)
-      this.chart.render()
+      return this.chart.render()
     },
     isObject(item) {
       return (
@@ -135,22 +135,22 @@ export default {
     },
     refresh () {
       this.destroy()
-      this.init()
+      return this.init()
     },
     destroy () {
       this.chart.destroy()
     },
     updateSeries (newSeries, animate) {
-      this.chart.updateSeries(newSeries, animate)
+      return this.chart.updateSeries(newSeries, animate)
     },
     updateOptions (newOptions, redrawPaths, animate) {
-      this.chart.updateOptions(newOptions, redrawPaths, animate)
+      return this.chart.updateOptions(newOptions, redrawPaths, animate)
     },
     toggleSeries (seriesName) {
       this.chart.toggleSeries(seriesName)
     },
     appendSeries (newSeries, animate) {
-      this.chart.appendSeries(newSeries, animate)
+      return this.chart.appendSeries(newSeries, animate)
     },
     resetSeries () {
       this.chart.resetSeries()
@@ -159,7 +159,7 @@ export default {
       this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex)
     },
     appendData (newData) {
-      this.chart.appendData(newData)
+      return this.chart.appendData(newData)
     },
     addText (options) {
       this.chart.addText(options)
