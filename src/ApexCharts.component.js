@@ -147,7 +147,13 @@ export default {
       return this.chart.updateOptions(newOptions, redrawPaths, animate)
     },
     toggleSeries (seriesName) {
-      this.chart.toggleSeries(seriesName)
+      return this.chart.toggleSeries(seriesName)
+    },
+    showSeries (seriesName) {
+      this.chart.showSeries(seriesName)
+    },
+    hideSeries (seriesName) {
+      this.chart.hideSeries(seriesName)
     },
     appendSeries (newSeries, animate) {
       return this.chart.appendSeries(newSeries, animate)
