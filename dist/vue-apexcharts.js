@@ -218,6 +218,9 @@
       },
       clearAnnotations: function clearAnnotations() {
         this.chart.clearAnnotations();
+      },
+      dataURI: function dataURI() {
+        return this.chart.dataURI();
       }
     }
   };

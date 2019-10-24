@@ -185,5 +185,8 @@ export default {
     clearAnnotations () {
       this.chart.clearAnnotations()
     },
+    dataURI () {
+      return this.chart.dataURI();
+    }
   }
 }
