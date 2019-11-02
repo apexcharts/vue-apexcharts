@@ -120,7 +120,7 @@
         });
         var config = this.extend(this.options, newOptions);
         this.chart = new ApexCharts(this.$el, config);
-        this.chart.render();
+        return this.chart.render();
       },
       isObject: function isObject(item) {
         return item && _typeof(item) === 'object' && !Array.isArray(item) && item != null;
@@ -175,22 +175,28 @@
       },
       refresh: function refresh() {
         this.destroy();
-        this.init();
+        return this.init();
       },
       destroy: function destroy() {
         this.chart.destroy();
       },
       updateSeries: function updateSeries(newSeries, animate) {
-        this.chart.updateSeries(newSeries, animate);
+        return this.chart.updateSeries(newSeries, animate);
       },
       updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
-        this.chart.updateOptions(newOptions, redrawPaths, animate);
+        return this.chart.updateOptions(newOptions, redrawPaths, animate);
       },
       toggleSeries: function toggleSeries(seriesName) {
-        this.chart.toggleSeries(seriesName);
+        return this.chart.toggleSeries(seriesName);
+      },
+      showSeries: function showSeries(seriesName) {
+        this.chart.showSeries(seriesName);
+      },
+      hideSeries: function hideSeries(seriesName) {
+        this.chart.hideSeries(seriesName);
       },
       appendSeries: function appendSeries(newSeries, animate) {
-        this.chart.appendSeries(newSeries, animate);
+        return this.chart.appendSeries(newSeries, animate);
       },
       resetSeries: function resetSeries() {
         this.chart.resetSeries();
@@ -199,7 +205,7 @@
         this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex);
       },
       appendData: function appendData(newData) {
-        this.chart.appendData(newData);
+        return this.chart.appendData(newData);
       },
       addText: function addText(options) {
         this.chart.addText(options);
@@ -215,6 +221,9 @@
       },
       addPointAnnotation: function addPointAnnotation(options, pushToMemory) {
         this.chart.addPointAnnotation(options, pushToMemory);
+      },
+      removeAnnotation: function removeAnnotation(id, options) {
+        this.chart.removeAnnotation(id, options);
       },
       clearAnnotations: function clearAnnotations() {
         this.chart.clearAnnotations();
