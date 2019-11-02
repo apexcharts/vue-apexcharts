@@ -182,6 +182,9 @@ export default {
     addPointAnnotation (options, pushToMemory) {
       this.chart.addPointAnnotation(options, pushToMemory)
     },
+    removeAnnotation(id, options) {
+      this.chart.removeAnnotation(id, options)
+    },
     clearAnnotations () {
       this.chart.clearAnnotations()
     },
