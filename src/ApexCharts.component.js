@@ -143,8 +143,8 @@ export default {
     updateSeries (newSeries, animate) {
       return this.chart.updateSeries(newSeries, animate)
     },
-    updateOptions (newOptions, redrawPaths, animate) {
-      return this.chart.updateOptions(newOptions, redrawPaths, animate)
+    updateOptions (newOptions, redrawPaths, animate, updateSyncedCharts) {
+      return this.chart.updateOptions(newOptions, redrawPaths, animate, updateSyncedCharts)
     },
     toggleSeries (seriesName) {
       return this.chart.toggleSeries(seriesName)
@@ -172,6 +172,9 @@ export default {
     },
     dataURI () {
       return this.chart.dataURI()
+    },
+    setLocale(localeName) {
+      return this.chart.setLocale(localeName)
     },
     addXaxisAnnotation (options, pushToMemory) {
       this.chart.addXaxisAnnotation(options, pushToMemory)
