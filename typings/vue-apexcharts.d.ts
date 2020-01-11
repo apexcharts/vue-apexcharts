@@ -15,7 +15,7 @@ interface VueApexChartsComponent extends Vue {
   init(): Promise<void>;
   refresh(): Promise<void>;
   destroy(): void;
-  updateOptions(options: any, redrawPaths?: boolean, animate?: boolean): Promise<void>;
+  updateOptions(options: any, redrawPaths?: boolean, animate?: boolean, updateSyncedCharts?: boolean): Promise<void>;
   updateSeries(newSeries: any, animate?: boolean): Promise<void>;
   toggleSeries(seriesName: string): any;
   showSeries(seriesName: string): void;

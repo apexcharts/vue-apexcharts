@@ -183,8 +183,8 @@
       updateSeries: function updateSeries(newSeries, animate) {
         return this.chart.updateSeries(newSeries, animate);
       },
-      updateOptions: function updateOptions(newOptions, redrawPaths, animate) {
-        return this.chart.updateOptions(newOptions, redrawPaths, animate);
+      updateOptions: function updateOptions(newOptions, redrawPaths, animate, updateSyncedCharts) {
+        return this.chart.updateOptions(newOptions, redrawPaths, animate, updateSyncedCharts);
       },
       toggleSeries: function toggleSeries(seriesName) {
         return this.chart.toggleSeries(seriesName);
@@ -212,6 +212,9 @@
       },
       dataURI: function dataURI() {
         return this.chart.dataURI();
+      },
+      setLocale: function setLocale(localeName) {
+        return this.chart.setLocale(localeName);
       },
       addXaxisAnnotation: function addXaxisAnnotation(options, pushToMemory) {
         this.chart.addXaxisAnnotation(options, pushToMemory);
