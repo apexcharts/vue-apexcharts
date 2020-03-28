@@ -12,7 +12,7 @@
 
 <p align="center">Vue.js wrapper for <a href="https://github.com/apexcharts/apexcharts.js">ApexCharts</a> to build interactive visualizations in vue.</p>
 
-<p align="center"><a href="https://apexcharts.com/javascript-chart-demos/"><img src="https://apexcharts.com/media/apexcharts-banner.png"></a></p>
+<p align="center"><a href="https://apexcharts.com/vue-chart-demos/"><img src="https://apexcharts.com/media/apexcharts-banner.png"></a></p>
 
 
 ## Download and Installation
