@@ -51,10 +51,10 @@
         }
       },
       width: {
-        default: '100%'
+        default: "100%"
       },
       height: {
-        default: 'auto'
+        default: "auto"
       }
     },
     data: function data() {
@@ -71,21 +71,21 @@
     created: function created() {
       var _this = this;
 
-      this.$watch('options', function (options) {
+      this.$watch("options", function (options) {
         if (!_this.chart && options) {
           _this.init();
         } else {
           _this.chart.updateOptions(_this.options);
         }
       });
-      this.$watch('series', function (series) {
+      this.$watch("series", function (series) {
         if (!_this.chart && series) {
           _this.init();
         } else {
           _this.chart.updateSeries(_this.series);
         }
       });
-      var watched = ['type', 'width', 'height'];
+      var watched = ["type", "width", "height"];
       watched.forEach(function (prop) {
         _this.$watch(prop, function () {
           _this.refresh();
@@ -100,7 +100,7 @@
       this.destroy();
     },
     render: function render(createElement) {
-      return createElement('div');
+      return createElement("div");
     },
     methods: {
       init: function init() {
@@ -108,7 +108,7 @@
 
         var newOptions = {
           chart: {
-            type: this.type || this.options.chart.type || 'line',
+            type: this.type || this.options.chart.type || "line",
             height: this.height,
             width: this.width,
             events: {}
@@ -123,17 +123,17 @@
         return this.chart.render();
       },
       isObject: function isObject(item) {
-        return item && _typeof(item) === 'object' && !Array.isArray(item) && item != null;
+        return item && _typeof(item) === "object" && !Array.isArray(item) && item != null;
       },
       extend: function extend(target, source) {
         var _this3 = this;
 
-        if (typeof Object.assign !== 'function') {
+        if (typeof Object.assign !== "function") {
           (function () {
             Object.assign = function (target) {
               // We must check against these specific cases.
               if (target === undefined || target === null) {
-                throw new TypeError('Cannot convert undefined or null to object');
+                throw new TypeError("Cannot convert undefined or null to object");
               }
 
               var output = Object(target);
@@ -201,6 +201,9 @@
       resetSeries: function resetSeries() {
         this.chart.resetSeries();
       },
+      zoomX: function zoomX(min, max) {
+        this.chart.zoomX(min, max);
+      },
       toggleDataPointSelection: function toggleDataPointSelection(seriesIndex, dataPointIndex) {
         this.chart.toggleDataPointSelection(seriesIndex, dataPointIndex);
       },
@@ -209,6 +212,12 @@
       },
       addText: function addText(options) {
         this.chart.addText(options);
+      },
+      addImage: function addImage(options) {
+        this.chart.addImage(options);
+      },
+      addShape: function addShape(options) {
+        this.chart.addShape(options);
       },
       dataURI: function dataURI() {
         return this.chart.dataURI();

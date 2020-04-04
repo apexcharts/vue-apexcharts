@@ -7,7 +7,7 @@ interface VueApexChartsComponent extends Vue {
   readonly chart?: ApexCharts;
   // props
   options?: ApexOptions;
-  type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'rangeBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar';
+  type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'rangeBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar' | 'polarArea';
   series: any;
   width?: string | number;
   height?: string | number;
@@ -21,10 +21,10 @@ interface VueApexChartsComponent extends Vue {
   showSeries(seriesName: string): void;
   hideSeries(seriesName: string): void;
   resetSeries(): void;
+  zoomX(min: number, max: number): void;
   toggleDataPointSelection(seriesIndex: number, dataPointIndex?: number): any;
   appendData(newData: any): Promise<void>;
   appendSeries(newSeries: any, animate?: boolean): Promise<void>;
-  addText(options: any, pushToMemory?: boolean, context?: any): void;
   addXaxisAnnotation(options: any, pushToMemory?: boolean, context?: any): void;
   addYaxisAnnotation(options: any, pushToMemory?: boolean, context?: any): void;
   addPointAnnotation(options: any, pushToMemory?: boolean, context?: any): void;
