@@ -7,7 +7,7 @@ interface VueApexChartsComponent extends Vue {
   readonly chart?: ApexCharts;
   // props
   options?: ApexOptions;
-  type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'rangeBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar';
+  type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'rangeBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar' | 'polarArea';
   series: any;
   width?: string | number;
   height?: string | number;
