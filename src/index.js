@@ -1,4 +1,4 @@
-import ApexCharts from 'apexcharts'
+import ApexCharts from "apexcharts/dist/apexcharts.min";
 import ApexChartsComponent from './ApexCharts.component';
 
 const VueApexCharts = ApexChartsComponent;
