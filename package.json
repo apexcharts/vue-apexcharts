@@ -39,6 +39,6 @@
     "rollup-plugin-istanbul": "^2.0.1",
     "rollup-plugin-node-resolve": "^3.4.0",
     "uglify-js": "^3.4.9",
-    "vue": "^2.5.17"
+    "vue": "^3.0.0"
   }
 }

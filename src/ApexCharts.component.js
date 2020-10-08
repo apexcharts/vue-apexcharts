@@ -1,4 +1,5 @@
 import ApexCharts from "apexcharts/dist/apexcharts.min";
+import { h } from 'vue';
 
 export default {
   props: {
@@ -54,14 +55,14 @@ export default {
       });
     });
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if (!this.chart) {
       return;
     }
     this.destroy();
   },
-  render(createElement) {
-    return createElement("div");
+  render() {
+    return h("div");
   },
   methods: {
     init() {
@@ -75,8 +76,10 @@ export default {
         series: this.series
       };
 
-      Object.keys(this.$listeners).forEach(evt => {
-        newOptions.chart.events[evt] = this.$listeners[evt];
+      Object.keys(this.$attrs).forEach(evt => {
+        if (typeof evt === "function") {
+          newOptions.chart.events[evt] = this.$attrs[evt];
+        }
       });
 
       const config = this.extend(this.options, newOptions);
@@ -85,7 +88,7 @@ export default {
     },
     isObject(item) {
       return (
-        item && typeof item === "object" && !Array.isArray(item) && item != null
+        item && typeof item === "object" && !Array.isArray(item)
       );
     },
     extend(target, source) {
