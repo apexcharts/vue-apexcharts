@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "apexcharts": "^3.6.6"
+    "apexcharts": "^3.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
