@@ -15,6 +15,18 @@ VueApexCharts.install = function (Vue) {
             return ApexCharts
         }
     });
+  
+  const fill = window.SVG.Gradient.prototype.fill;
+  window.Gradient.prototype.fill = function (...args) {
+    const url = fill.apply(this, args);
+    const prefix = `url(${document.location.href}`;
+
+    if (!url.startsWith(prefix)) {
+      return url.split('url(').join(prefix);
+    }
+
+    return url;
+  };
 };
 
 export default VueApexCharts
