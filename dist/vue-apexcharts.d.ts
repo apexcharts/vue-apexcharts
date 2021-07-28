@@ -30,7 +30,7 @@ interface VueApexChartsComponent extends Vue {
   addPointAnnotation(options: any, pushToMemory?: boolean, context?: any): void;
   removeAnnotation(id: string, options?: any): void;
   clearAnnotations(): void;
-  dataURI(): Promise<string>;
+  dataURI(options?: { scale?: number, width?: number }): Promise<void>
 }
 
 declare const VueApexCharts: Component & ComponentOptions<Vue> & PluginObject<any>;
