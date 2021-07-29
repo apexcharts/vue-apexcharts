@@ -184,8 +184,8 @@ export default {
     addShape(options) {
       this.chart.addShape(options);
     },
-    dataURI() {
-      return this.chart.dataURI();
+    dataURI(options) {
+      return this.chart.dataURI(options);
     },
     setLocale(localeName) {
       return this.chart.setLocale(localeName);
