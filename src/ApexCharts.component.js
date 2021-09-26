@@ -38,7 +38,7 @@ export default {
       } else {
         this.chart.updateOptions(this.options);
       }
-    });
+    }, { deep: true });
 
     this.$watch("series", series => {
       if (!this.chart && series) {
@@ -46,7 +46,7 @@ export default {
       } else {
         this.chart.updateSeries(this.series);
       }
-    });
+    }, { deep: true });
     let watched = ["type", "width", "height"];
     watched.forEach(prop => {
       this.$watch(prop, () => {
