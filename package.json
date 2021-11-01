@@ -7,6 +7,10 @@
     "bundle": "rollup -c",
     "build": "npm run bundle"
   },
+  "repository": {	
+    "type": "git",
+    "url": "https://github.com/apexcharts/vue-apexcharts.git"
+  },
   "keywords": [
     "Vue.js",
     "apexcharts",
