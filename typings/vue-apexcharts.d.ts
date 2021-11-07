@@ -2,16 +2,24 @@ import Vue, { Component, ComponentOptions } from 'vue';
 import { PluginObject } from 'vue/types/plugin';
 import ApexCharts, { ApexOptions } from 'apexcharts';
 
-interface VueApexChartsComponent extends Vue {
-  // data
-  readonly chart?: ApexCharts;
-  // props
-  options?: ApexOptions;
+// this interface matches the exposed properties to enable straightforward
+// and strongly typed binding to the <apexchart> component properties
+// (see: https://apexcharts.com/docs/vue-charts/#props)
+export interface VueApexChartConfig {
   type?: 'line' | 'area' | 'bar' | 'histogram' | 'pie' | 'donut' | 'radialBar' | 'rangeBar' | 'scatter' | 'bubble' | 'heatmap' | 'candlestick' | 'radar' | 'polarArea' | 'treemap' | 'boxPlot';
   series: any;
-  width?: string | number;
   height?: string | number;
-  // method
+  width?: string | number;
+  options?: ApexOptions;
+}
+
+export interface VueApexChartsComponent extends VueApexChartConfig, Vue {
+  // data
+  readonly chart?: ApexCharts;
+
+  // props (see: VueApexChartConfig)
+
+  // methods
   init(): Promise<void>;
   refresh(): Promise<void>;
   destroy(): void;
