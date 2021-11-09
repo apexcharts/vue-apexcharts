@@ -219,8 +219,8 @@
       addShape: function addShape(options) {
         this.chart.addShape(options);
       },
-      dataURI: function dataURI() {
-        return this.chart.dataURI();
+      dataURI: function dataURI(options) {
+        return this.chart.dataURI(options);
       },
       setLocale: function setLocale(localeName) {
         return this.chart.setLocale(localeName);
