@@ -54,7 +54,7 @@ export default {
       });
     });
   },
-  beforeDestroy() {
+  beforeUnmount() {
     if (!this.chart) {
       return;
     }
