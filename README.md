@@ -23,6 +23,7 @@
 npm install --save apexcharts
 npm install --save vue-apexcharts
 ```
+If you're looking for Vue 3.x.x compatibile component, check-out <a href="https://github.com/apexcharts/vue3-apexcharts">vue3-apexcharts</a>
 
 ## Usage
 ```js
