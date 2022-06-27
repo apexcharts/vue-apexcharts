@@ -32,6 +32,13 @@ export default {
     this.init();
   },
   created() {
+    let watched = ["type", "width", "height"];
+    watched.forEach(prop => {
+      this.$watch(prop, () => {
+        this.refresh();
+      });
+    });
+
     this.$watch("options", options => {
       if (!this.chart && options) {
         this.init();
@@ -46,12 +53,6 @@ export default {
       } else {
         this.chart.updateSeries(this.series);
       }
-    });
-    let watched = ["type", "width", "height"];
-    watched.forEach(prop => {
-      this.$watch(prop, () => {
-        this.refresh();
-      });
     });
   },
   beforeUnmount() {
