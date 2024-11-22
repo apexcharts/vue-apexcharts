@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "apexcharts": "^3.24.0",
-    "vue": "^2.5.17",
+    "vue": "^3.0.0",
     "vue-apexcharts": "^1.5.3",
     "vue-router": "^3.0.1"
   },
