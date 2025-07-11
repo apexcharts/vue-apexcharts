@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/apexcharts/vue-apexcharts/issues"
   },
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
     "apexcharts": ">=4.0.0",
     "vue": "^2.5.17"
