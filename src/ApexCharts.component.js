@@ -55,7 +55,12 @@ export default {
       }
     });
   },
-  beforeUnmount() {
+  // `beforeDestroy`, not `beforeUnmount`: this is the Vue 2 wrapper (see the
+  // `vue: ^2.5.17` peer dependency, `this.$listeners` below, and the
+  // `Vue.prototype` install hook). Vue 2 has no `beforeUnmount` hook, so under
+  // that name nothing calls destroy() and every unmounted chart leaks.
+  // `beforeUnmount` is the Vue 3 spelling and belongs in vue3-apexcharts.
+  beforeDestroy() {
     if (!this.chart) {
       return;
     }

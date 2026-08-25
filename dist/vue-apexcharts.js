@@ -1,10 +1,12 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('apexcharts/dist/apexcharts.min')) :
   typeof define === 'function' && define.amd ? define(['apexcharts/dist/apexcharts.min'], factory) :
-  (global.VueApexCharts = factory(global.ApexCharts));
-}(this, (function (ApexCharts) { 'use strict';
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.VueApexCharts = factory(global.ApexCharts));
+})(this, (function (ApexCharts) { 'use strict';
 
-  ApexCharts = ApexCharts && ApexCharts.hasOwnProperty('default') ? ApexCharts['default'] : ApexCharts;
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var ApexCharts__default = /*#__PURE__*/_interopDefaultLegacy(ApexCharts);
 
   function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -63,7 +65,7 @@
       };
     },
     beforeMount: function beforeMount() {
-      window.ApexCharts = ApexCharts;
+      window.ApexCharts = ApexCharts__default["default"];
     },
     mounted: function mounted() {
       this.init();
@@ -71,6 +73,12 @@
     created: function created() {
       var _this = this;
 
+      var watched = ["type", "width", "height"];
+      watched.forEach(function (prop) {
+        _this.$watch(prop, function () {
+          _this.refresh();
+        });
+      });
       this.$watch("options", function (options) {
         if (!_this.chart && options) {
           _this.init();
@@ -85,13 +93,12 @@
           _this.chart.updateSeries(_this.series);
         }
       });
-      var watched = ["type", "width", "height"];
-      watched.forEach(function (prop) {
-        _this.$watch(prop, function () {
-          _this.refresh();
-        });
-      });
     },
+    // `beforeDestroy`, not `beforeUnmount`: this is the Vue 2 wrapper (see the
+    // `vue: ^2.5.17` peer dependency, `this.$listeners` below, and the
+    // `Vue.prototype` install hook). Vue 2 has no `beforeUnmount` hook, so under
+    // that name nothing calls destroy() and every unmounted chart leaks.
+    // `beforeUnmount` is the Vue 3 spelling and belongs in vue3-apexcharts.
     beforeDestroy: function beforeDestroy() {
       if (!this.chart) {
         return;
@@ -119,7 +126,7 @@
           newOptions.chart.events[evt] = _this2.$listeners[evt];
         });
         var config = this.extend(this.options, newOptions);
-        this.chart = new ApexCharts(this.$el, config);
+        this.chart = new ApexCharts__default["default"](this.$el, config);
         return this.chart.render();
       },
       isObject: function isObject(item) {
@@ -244,20 +251,20 @@
   };
 
   var VueApexCharts = ApexChartsComponent;
-  window.ApexCharts = ApexCharts;
+  window.ApexCharts = ApexCharts__default["default"];
 
   VueApexCharts.install = function (Vue) {
     //adding a global method or property
-    Vue.ApexCharts = ApexCharts;
-    window.ApexCharts = ApexCharts; // add the instance method
+    Vue.ApexCharts = ApexCharts__default["default"];
+    window.ApexCharts = ApexCharts__default["default"]; // add the instance method
 
     Object.defineProperty(Vue.prototype, '$apexcharts', {
       get: function get() {
-        return ApexCharts;
+        return ApexCharts__default["default"];
       }
     });
   };
 
   return VueApexCharts;
 
-})));
+}));
