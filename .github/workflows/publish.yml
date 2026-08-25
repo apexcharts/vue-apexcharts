@@ -1,0 +1,82 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check commit message for release trigger
+        id: check
+        # Pass the commit message via env, never interpolate it into the script.
+        # Inlining ${{ github.event.head_commit.message }} lets quotes/backticks
+        # in the message break the shell (and is a command-injection vector).
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          # Only the first line (subject) is the release trigger.
+          SUBJECT=$(printf '%s\n' "$COMMIT_MSG" | head -n1)
+          if printf '%s' "$SUBJECT" | grep -qE '^release: [0-9]+\.[0-9]+\.[0-9]+'; then
+            VERSION=$(printf '%s' "$SUBJECT" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+[^ ]*' | head -n1)
+            echo "triggered=true" >> "$GITHUB_OUTPUT"
+            echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+            if printf '%s' "$VERSION" | grep -qE '-'; then
+              echo "tag=next" >> "$GITHUB_OUTPUT"
+            else
+              echo "tag=latest" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "triggered=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify package.json version matches commit message
+        if: steps.check.outputs.triggered == 'true'
+        env:
+          MSG_VERSION: ${{ steps.check.outputs.version }}
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          if [ "$PKG_VERSION" != "$MSG_VERSION" ]; then
+            echo "::error::package.json version ($PKG_VERSION) does not match commit message version ($MSG_VERSION)"
+            exit 1
+          fi
+          echo "Version $PKG_VERSION confirmed"
+
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          node-version: "20"
+
+      - run: npm install -g npm@latest
+        if: steps.check.outputs.triggered == 'true'
+
+      - run: npm install
+        if: steps.check.outputs.triggered == 'true'
+
+      # No test step: this package has no test script.
+      - run: npm run build
+        if: steps.check.outputs.triggered == 'true'
+
+      # `dist/` is tracked here, and the build above overwrites it. Fail rather
+      # than publish if the two disagree: a mismatch means the committed dist is
+      # not what src produces, which is how this package spent four years
+      # shipping a dist built before changes that were already merged.
+      - name: Verify committed dist matches a fresh build
+        if: steps.check.outputs.triggered == 'true'
+        run: |
+          if ! git diff --quiet -- dist/; then
+            echo "::error::dist/ differs from a fresh build. Run 'npm run build' and commit the result."
+            git diff --stat -- dist/
+            exit 1
+          fi
+          echo "dist/ is up to date"
+
+      - run: npm publish --provenance --tag ${{ steps.check.outputs.tag }}
+        if: steps.check.outputs.triggered == 'true'
