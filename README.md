@@ -1,7 +1,7 @@
 <p align="center"><img src="https://apexcharts.com/media/vue-apexcharts.png"></p>
 
 <p align="center">
-  <a href="https://github.com/apexcharts/vue-apexcharts/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-see%20LICENSE.md-blue.svg" alt="License terms"></a>
   <a href="https://travis-ci.com/apexcharts/vue-apexcharts"><img src="https://api.travis-ci.com/apexcharts/vue-apexcharts.svg?branch=master" alt="build" /></a>
   <a href="https://www.npmjs.com/package/vue-apexcharts"><img src="https://img.shields.io/npm/v/vue-apexcharts.svg" alt="ver"></a>
 </p>
@@ -251,10 +251,10 @@ npm run build
 
 
 ## Supporting ApexCharts
-ApexCharts is an open source project. <br /> You can help by becoming a sponsor on <a href="https://patreon.com/junedchhipa">Patreon</a> or doing a one time donation on <a href="https://paypal.me/junedchhipa">PayPal</a> <br />
+ApexCharts offers a Community License subject to eligibility and permitted-use conditions in <a href="LICENSE.md">LICENSE.md</a>. <br /> You can help by becoming a sponsor on <a href="https://patreon.com/junedchhipa">Patreon</a> or doing a one time donation on <a href="https://paypal.me/junedchhipa">PayPal</a> <br />
 
 <a href="https://patreon.com/junedchhipa"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" /> </a>
 
 ## License
 
-Vue-ApexCharts is released under MIT license. You are free to use, modify and distribute this software, as long as the copyright header is left intact.
+Vue-ApexCharts is offered under the applicable terms in [LICENSE.md](LICENSE.md). Review the eligibility and permitted-use conditions there before installing or redistributing ApexCharts.
