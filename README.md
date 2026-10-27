@@ -250,11 +250,7 @@ npm run build
 ```
 
 
-## Supporting ApexCharts
-ApexCharts offers a Community License subject to eligibility and permitted-use conditions in <a href="LICENSE.md">LICENSE.md</a>. <br /> You can help by becoming a sponsor on <a href="https://patreon.com/junedchhipa">Patreon</a> or doing a one time donation on <a href="https://paypal.me/junedchhipa">PayPal</a> <br />
-
-<a href="https://patreon.com/junedchhipa"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" /> </a>
-
 ## License
 
-Vue-ApexCharts is offered under the applicable terms in [LICENSE.md](LICENSE.md). Review the eligibility and permitted-use conditions there before installing or redistributing ApexCharts.
+ApexCharts is offered under a **dual-license model** to support individuals, startups, and commercial products of all sizes.
+Read full license agreements here: [https://apexcharts.com/license](https://apexcharts.com/license)
