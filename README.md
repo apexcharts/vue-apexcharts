@@ -152,6 +152,12 @@ this.chartOptions.xaxis = {
 }}
 ```
 
+### Using with Ignite UI
+
+From ApexCharts 8.8.0, `import 'apexcharts/features/ignite-ui'` once (free, no license key) and charts follow the Ignite UI theme on the page; `theme: { designSystem: false }` turns it off for one chart.
+After swapping the theme stylesheet at runtime, call `this.$refs.chart.chart.refreshTokens()` (with `ref="chart"` on the component); see the [vue3-apexcharts README](https://github.com/apexcharts/vue3-apexcharts#using-with-ignite-ui) for the full notes.
+This wrapper bundles the self-contained `apexcharts/dist/apexcharts.min` build, while the add-on imports `apexcharts/core`, so the app bundle carries a second copy of the ApexCharts core. Charts still pick up the theme, since both copies share one feature registry; only the bundle grows.
+
 ## Props
 
 | Prop        | Type           | Description  |
